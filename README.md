@@ -32,3 +32,17 @@ these values, and the `is_vegetarian` should return a boolean
 The `ToppingsMenu` should also feature a `load_menu` method which accepts
 a filepath to a CSV and creates appropriate `Topping` objects for each
 row in the file
+3. The `ToppingsMenu` should provide a method `find_by_name` which accepts
+a topping name (a string) and returns the `Topping` instance which
+matches that name
+
+
+__Example Usage__
+
+```ruby
+tm = ToppingMenu.new
+tm.load_data("./data/toppings.csv")
+t = tm.find_by_name("anchovies")
+t.name
+=> "anchovies"
+```
