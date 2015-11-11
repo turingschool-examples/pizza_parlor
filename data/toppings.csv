@@ -1,0 +1,29 @@
+name,price,is_vegetarian
+Artichoke hearts,2,yes
+Avocado,3,yes
+Broccoli,1,yes
+Capers,1,yes
+Eggplant,1,yes
+Green peppers,1,yes
+Onions,1,yes
+Olives,1,yes
+Red peppers,1,yes
+scallions,1,yes
+Spinach,1,yes
+Sun dried tomatoes,1,yes
+Sweet corn,1,yes
+Wild mushrooms,1,yes
+Yellow peppers,1,yes
+Oregano,1,yes
+Anchovies,2,no
+Feta,1,yes
+Goat Cheese,1,yes
+Parmesan,1,yes
+Mozzarella,1,yes
+Ricota,1,yes
+Bacon,2,no
+BBQ Chicken,3,no
+Ham,3,no
+Meatballs,2,no
+Pepperoni,1,no
+Sausage,3,no
