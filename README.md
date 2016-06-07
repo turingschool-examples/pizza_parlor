@@ -36,11 +36,29 @@ row in the file
 a topping name (a string) and returns the `Topping` instance which
 matches that name
 
-
-__Example Usage__
+Use TDD to build out these objects so they can be used according to the following spec:
 
 ```ruby
+topping = Topping.new({name: "Anchovies", price: "2", is_vegetarian: "no"})
+topping.name
+=> "Anchovies"
+topping.price
+=> 2
+topping.is_vegetarian
+=> false
+
+
+tm = ToppingMenu.new([topping])
+tm.find_by_name("anchovies")
+=> <#Topping>
+tm.find_by_name("anchovies").name
+=> "anchovies"
+
+# OR...
+
 tm = ToppingMenu.new
+tm.find_by_name("anchovies")
+=> nil
 tm.load_data("./data/toppings.csv")
 t = tm.find_by_name("anchovies")
 t.name
