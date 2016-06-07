@@ -48,7 +48,7 @@ topping.is_vegetarian
 => false
 
 
-tm = ToppingMenu.new([topping])
+tm = ToppingsMenu.new([topping])
 tm.find_by_name("anchovies")
 => <#Topping>
 tm.find_by_name("anchovies").name
@@ -56,7 +56,7 @@ tm.find_by_name("anchovies").name
 
 # OR...
 
-tm = ToppingMenu.new
+tm = ToppingsMenu.new
 tm.find_by_name("anchovies")
 => nil
 tm.load_data("./data/toppings.csv")
