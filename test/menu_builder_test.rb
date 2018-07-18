@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/menu_builder'
 require './lib/adaptors/csv_adaptor'
+require './lib/adaptors/http_adaptor'
 
 class MenuBuilderTest < Minitest::Test
   def test_it_exists
@@ -14,6 +15,15 @@ class MenuBuilderTest < Minitest::Test
     mb   = MenuBuilder.new
     csv  = CsvAdaptor.new
     menu = mb.build(csv)
+
+    assert_instance_of ToppingsMenu, menu
+    assert_equal 28, menu.toppings.count
+  end
+
+  def test_it_can_build_from_http
+    mb    = MenuBuilder.new
+    http  = HttpAdaptor.new
+    menu  = mb.build(http)
 
     assert_instance_of ToppingsMenu, menu
     assert_equal 28, menu.toppings.count
