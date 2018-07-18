@@ -2,10 +2,11 @@ require 'csv'
 require './lib/toppings_menu'
 
 class MenuBuilder
-  def build(location)
-    menu = ToppingsMenu.new
-    CSV.foreach(location, headers: true, header_converters: :symbol) do |row|
-      menu.add_topping(row)
+  def build(adaptor)
+    toppings = adaptor.load
+    menu     = ToppingsMenu.new
+    toppings.each do |topping|
+      menu.add_topping(topping)
     end
     return menu
   end
