@@ -2,6 +2,8 @@ require 'csv'
 require './lib/topping'
 
 class ToppingsMenu
+  attr_reader :toppings
+
   def initialize
     @toppings = []
   end
@@ -14,7 +16,11 @@ class ToppingsMenu
 
   def load_menu(location)
     CSV.foreach(location, headers: true, header_converters: :symbol) do |row|
-      @toppings << Topping.new(row)
+      add_topping(row)
     end
+  end
+
+  def add_topping(topping)
+    @toppings << Topping.new(topping)
   end
 end
