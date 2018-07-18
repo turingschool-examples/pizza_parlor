@@ -1,4 +1,3 @@
-require 'csv'
 require './lib/topping'
 
 class ToppingsMenu
@@ -11,12 +10,6 @@ class ToppingsMenu
   def find_by_name(name)
     @toppings.find do |topping|
       topping.name == name
-    end
-  end
-
-  def load_menu(location)
-    CSV.foreach(location, headers: true, header_converters: :symbol) do |row|
-      add_topping(row)
     end
   end
 

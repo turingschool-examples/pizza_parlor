@@ -16,5 +16,4 @@ class ToppingTest < Minitest::Test
     assert_equal 2, topping.price
     assert_equal false, topping.is_vegetarian
   end
-
 end

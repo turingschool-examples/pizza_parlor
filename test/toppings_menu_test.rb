@@ -16,13 +16,6 @@ class ToppingsMenuTest < Minitest::Test
     assert_equal 1, tm.toppings.count
   end
 
-  def test_it_can_load_a_menu
-    tm = ToppingsMenu.new
-    tm.load_menu("./data/toppings.csv")
-
-    assert_equal 28, tm.toppings.count
-  end
-
   def test_it_can_find_by_name
     tm = ToppingsMenu.new
     tm.add_topping({name: "Artichoke hearts", price: 2, is_vegetarian: "yes"})
@@ -32,5 +25,4 @@ class ToppingsMenuTest < Minitest::Test
     assert_instance_of Topping, actual
     assert_equal "Artichoke hearts", actual.name
   end
-
 end
